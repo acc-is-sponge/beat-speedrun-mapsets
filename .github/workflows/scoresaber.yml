@@ -24,7 +24,8 @@ jobs:
 
       - run: pnpm build:mapset:scoresaber
 
-      - run: |-
+      - name: git commit
+        run: |-
           git config --global user.name "acc-is-sponge"
           git config --global user.email "acc.is.sponge@gmail.com"
           git add scoresaber
