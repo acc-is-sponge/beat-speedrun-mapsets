@@ -1,5 +1,10 @@
 # Beat Speedrun Mapsets
 
+## Rules
+
+- Mapsets maintained in this repository must be immutable.
+- The mapset based on [ScoreSaber](https://scoresaber.com/)'s star rating must be placed under `scoresaber/`.
+
 ## Format
 
 ```json
@@ -21,9 +26,12 @@
 }
 ```
 
-In short:
+In short in TypeScript:
 
 ```ts
-type MapSet = { [songHash: string]: { [difficultyRaw: string]: number /* star */ } };
+type MapSet = { [H in SongHash]: { [D in DifficultyRaw]: Star } };
+type SongHash = string;
+type DifficultyRaw = `_${'Easy' | 'Normal' | 'Hard' | 'Expert' | 'ExpertPlus'}_SoloStandard`;
+type Star = number;
 ```
 
