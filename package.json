@@ -1,0 +1,14 @@
+{
+  "name": "beat-speedrun-mapsets",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {},
+  "author": "acc-is-sponge",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@types/node": "^20.5.9",
+    "tsx": "^3.12.8",
+    "typescript": "^5.2.2"
+  }
+}
