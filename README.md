@@ -24,6 +24,6 @@
 In short:
 
 ```ts
-type MapSet = { [songHash: string]: { [difficultyRaw: string]: number } };
+type MapSet = { [songHash: string]: { [difficultyRaw: string]: number /* star */ } };
 ```
 

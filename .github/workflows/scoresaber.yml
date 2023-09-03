@@ -1,0 +1,32 @@
+name: Build ScoreSaber Mapset
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build:mapset:scoresaber
+
+      - run: |-
+          git config --global user.name "acc-is-sponge"
+          git config --global user.email "acc.is.sponge@gmail.com"
+          git add scoresaber
+          git commit -m "Update ScoreSaber Mapset"
+          git push
