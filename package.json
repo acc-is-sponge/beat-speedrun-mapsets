@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "build:mapset:scoresaber": "tsx build-mapset-scoresaber.ts"
+  },
   "author": "acc-is-sponge",
   "license": "BSD-3-Clause",
   "dependencies": {
