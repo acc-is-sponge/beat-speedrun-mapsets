@@ -35,19 +35,21 @@ while (true) {
       if (!latestRankedMapDate) {
         latestRankedMapDate = rankedDate;
       } else if (
-        Math.abs(latestRankedMapDate.getTime() - rankedDate.getTime()) <
-        1000 * 60 * 60 * 24
+        1000 * 60 * 60 * 24 <
+        Math.abs(latestRankedMapDate.getTime() - rankedDate.getTime())
       ) {
-        console.log(
-          "  ... skipping (The most recent ranked map will be reweighted at the next ranking batch)"
-        );
-      } else {
         isSkippingMostRecentRankedMaps = false;
       }
     }
 
-    const difficulties = dest[songHash] || (dest[songHash] = {});
-    difficulties[difficultyRaw] = stars;
+    if (isSkippingMostRecentRankedMaps) {
+      console.log(
+        "  ... skipping (The most recent ranked map will be reweighted at the next ranking batch)"
+      );
+    } else {
+      const difficulties = dest[songHash] || (dest[songHash] = {});
+      difficulties[difficultyRaw] = stars;
+    }
   }
 
   ++page;
