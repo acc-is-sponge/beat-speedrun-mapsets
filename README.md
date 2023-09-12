@@ -1,5 +1,7 @@
 # Beat Speedrun Mapsets
 
+Mapset definitions for [Beat Speedrun MOD](https://github.com/acc-is-sponge/beat-speedrun-mod).
+
 ## Rules
 
 - Mapsets maintained in this repository must be immutable.
