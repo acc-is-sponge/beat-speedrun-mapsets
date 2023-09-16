@@ -2,7 +2,7 @@ name: Build ScoreSaber Mapset
 
 on:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "0 0 * * 6"
   workflow_dispatch:
 
 jobs:
@@ -22,12 +22,12 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm build:mapset:scoresaber
+      - run: pnpm build
 
       - name: git commit
         run: |-
           git config --global user.name "acc-is-sponge"
           git config --global user.email "acc.is.sponge@gmail.com"
           git add scoresaber
-          git commit -m "Update ScoreSaber Mapset"
+          git commit -m "Add ScoreSaber Mapset"
           git push

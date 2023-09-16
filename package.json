@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build:mapset:scoresaber": "tsx build-mapset-scoresaber.ts"
+    "build": "tsx build.ts"
   },
   "author": "acc-is-sponge",
   "license": "BSD-3-Clause",
